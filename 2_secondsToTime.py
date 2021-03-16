@@ -8,4 +8,3 @@ if __name__ == '__main__':
         minutes = minutes % 60
     timeString = '{hours:0g}:{minutes:0g}:{seconds:0g}'
     print(timeString.format(hours=hours, minutes=minutes, seconds=seconds))
-36
