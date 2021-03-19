@@ -20,16 +20,27 @@ class Goods:
                     result[key].append(product[key])
         return result
 
+    def __repr__(self):
+        return '\n'.join(map(str, self.__items))
+
+    def __str__(self):
+        return '\n'.join(map(str, self.__items))
+
 
 if __name__ == '__main__':
     print('Product format: name price amount units. All fields separated by space.')
     goods = Goods()
     while True:
-        product = input('Enter a new product or press Enter to finish: ')
-        if product == '':
+        productStr = input('Enter a new product or press Enter to finish: ')
+        if productStr == '':
             break
-        name, price, amount, units, *_ = product.split(' ')
+        product = productStr.split(' ')
+        if len(product) < 4:
+            print("Incorrect input format")
+            continue
+        name, price, amount, units, *_ = productStr.split(' ')
         goods.add(name, int(price), float(amount), units)
+    print(goods)
     analytic = goods.analytic()
     for title in analytic:
         print(f'{title}: {analytic[title]}')
