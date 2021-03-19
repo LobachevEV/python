@@ -1,8 +1,12 @@
 if __name__ == '__main__':
-    arr = input("Enter a string without any separators: ")
+    n = int(input('Enter the number of elements: '))
+    arr = []
+    for i in range(0, n):
+        arr.append(input('Enter the next element: '))
+
     resultArr = []
     for i in range(0, len(arr), 2):
         if i+1 < len(arr):
-            resultArr.insert(i, arr[i + 1])
-        resultArr.insert(i + 1, arr[i])
+            resultArr.append(arr[i + 1])
+        resultArr.append(arr[i])
     print(resultArr)
