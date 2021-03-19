@@ -25,12 +25,12 @@ if __name__ == '__main__':
     print('Product format: name price amount units. All fields separated by space.')
     goods = Goods()
     while True:
-        product = input('Enter a new product or press Enter to finish ')
+        product = input('Enter a new product or press Enter to finish: ')
         if product == '':
             break
         name, price, amount, units, *_ = product.split(' ')
         goods.add(name, int(price), float(amount), units)
     analytic = goods.analytic()
-    for key in analytic:
-        print(f'{key}: {analytic[key]}')
+    for title in analytic:
+        print(f'{title}: {analytic[title]}')
 
