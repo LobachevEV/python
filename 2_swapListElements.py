@@ -1,8 +1,10 @@
 if __name__ == '__main__':
-    n = int(input('Enter the number of elements: '))
     arr = []
-    for i in range(0, n):
-        arr.append(input('Enter the next element: '))
+    while True:
+        next_el = input('Enter the next element or press Enter to finish: ')
+        if next_el == '':
+            break
+        arr.append(next_el)
 
     resultArr = []
     for i in range(0, len(arr), 2):
