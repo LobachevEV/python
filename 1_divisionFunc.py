@@ -1,6 +1,9 @@
-def division(a: float, b: float) -> float:
+from typing import Optional
+
+
+def division(a: float, b: float) -> Optional[float]:
     if b == 0:
-        return 0
+        return None
     return a / b
 
 
