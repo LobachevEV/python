@@ -1,14 +1,13 @@
 import random
-from typing import Iterable, List
+from typing import List
 
 
 def aggregate_right_bigger(l: List) -> List:
-    length = len(l)
-    for i in range(0, length):
-        if i + 1 >= length:
-            return
-        if l[i + 1] > l[i]:
-            yield l[i+ 1]
+    prev_el = None
+    for el in l:
+        if prev_el is not None and el > prev_el:
+            yield el
+        prev_el = el
 
 
 if __name__ == '__main__':
