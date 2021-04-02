@@ -1,0 +1,8 @@
+Ivanov 10000
+Petrov 40000
+Sidorov 5000
+Emelianov 100000
+Petrenko 63245
+Papandopalo 98088
+Filipov 5487
+Semenov 58859
