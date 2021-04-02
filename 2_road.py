@@ -3,8 +3,9 @@ class Road:
         self._length = length_m
         self._width = width_m
 
-    def asphalt_tons_calc(self, asphalt_kg_per_sqr_meter: float, depth_sm: float) -> float:
-        return self._length * self._width * asphalt_kg_per_sqr_meter * depth_sm / 1000
+
+def asphalt_tons_calc(road: Road, asphalt_kg_per_sqr_meter: float, depth_sm: float) -> float:
+    return road._length * road._width * asphalt_kg_per_sqr_meter * depth_sm / 1000
 
 
 if __name__ == '__main__':
@@ -14,4 +15,5 @@ if __name__ == '__main__':
         input('Enter the mass of asphalt for covering one square meter of road with asphalt in kg: '))
     depth = float(input('Enter the depth of roadbed in sm: '))
     road = Road(road_length, road_width)
-    print(f'The mass of asphalt required to cover the entire roadway: {road.asphalt_tons_calc(asphalt_kg_per_sqr_meter, depth)} t', )
+    print(
+        f'The mass of asphalt required to cover the entire roadway: {asphalt_tons_calc(road, asphalt_kg_per_sqr_meter, depth)} t', )
