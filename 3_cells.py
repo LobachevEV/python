@@ -31,7 +31,7 @@ class Cell:
         result = ''
         units_left = self.units
         while i < self.units:
-            result += ('*' * units_in_row + '\n' if units_left > units_in_row else '*' * units_left)
+            result += ('*' * units_in_row + '\\n' if units_left > units_in_row else '*' * units_left)
             i += units_in_row
             units_left -= units_in_row
         return result
