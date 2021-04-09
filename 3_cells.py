@@ -11,6 +11,8 @@ class Cell:
         return Cell(self.units + other.units)
 
     def __sub__(self, other) -> Cell:
+        if self.units < other.units:
+            raise Exception('Diff is less then 0')
         return Cell(self.units - other.units)
 
     def __mul__(self, other) -> Cell:
@@ -38,10 +40,14 @@ class Cell:
 if __name__ == '__main__':
     cell_1 = Cell(10)
     cell_2 = Cell(57)
-    print('+: ', cell_2 + cell_1)
-    print('-: ', cell_2 - cell_1)
-    print('*: ', cell_2 * cell_1)
-    print('/: ', cell_2 / cell_1)
+    print('cell_2 + cell_1 = ', cell_2 + cell_1)
+    print('cell_2 - cell_1 = ', cell_2 - cell_1)
+    try:
+        print('cell_1 - cell_2 = ', cell_1 - cell_2)
+    except Exception as ex:
+        print('cell_1 - cell_2 = ', ex)
+    print('cell_2 * cell_1 = ', cell_2 * cell_1)
+    print('cell_2 / cell_1 = ', cell_2 / cell_1)
     print('cell_1.make_order(3)')
     print(cell_1.make_order(3))
     print('cell_2.make_order(5)')
